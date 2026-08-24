@@ -25,10 +25,12 @@
         div{
             background-color: wheat;
         }
-        table, td{
+        table#sepei,#sepei caption, #sepei td, #sepei th{
             border: 1px solid black;
             border-collapse: collapse;
+            background-color: rgba(200, 100, 50, 1);
         }
+        
     </style>
 </head>
 
@@ -101,8 +103,47 @@
                 <td>310,00</td>
             </tr>
         </table>
+        <br>
+        <table id="sepei">
+            <caption>SEPEI 2026</caption> 
+            <tr><th>Índice </th> <th>  nome </th> <th>idade </th></tr>
+            <tr><td>1</td><td>Joana</td><td>18</td></tr>
+            <tr><td>2</td><td>Oliver</td><td>18</td></tr>
+            <tr><td>3</td><td>Kiara</td><td>17</td></tr>
+            <tr><td>4</td><td>Heloisa</td><td>18</td></tr>   
+            <tr><td>5</td><td>Maria</td><td>17</td></tr>
+            <tr><td colspan="2">Total alunos</td><td>5</td></tr>
+        </table>
 
+    </section>
 
+    <section>
+        <h1> Formulário</h1>
+        <p> As tags de formulários permitem entrada de dados</p>
+        <form action="">
+            <label for="inputNome">Nome</label>
+            <input id="inputNome" type="text">  
+            <label for="inputTelefone">Telefone</label>
+            <input id="inputTelefone" type="tel" pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$">
+            <input type="submit" value="Enviar">
+        </form>
+
+        <form action="https://google.com/search" method="get">
+            <label for="url">Url</label>
+            <input type="text" name="q">
+            <input type="text" name="bla">
+            <input type="submit">
+        </form>
+
+        <form  method="post">
+            <label for="usr">Usuário</label>
+            <input id="usr" type="text" name="usuario">
+
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" name="senha">
+
+            <input type="submit">
+        </form>
     </section>
 </body> 
 
