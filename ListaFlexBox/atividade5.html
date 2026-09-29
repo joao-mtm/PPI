@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout Flexbox - Exercício 5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #cd0000;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex: 1; 
+        }
+
+        article {
+            flex: 3; 
+            background-color: #36c50a;
+            padding: 10px;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #099b8f; 
+            padding: 10px;
+        }
+
+        nav {
+            flex: 1;
+            background-color: #b40f7d; 
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+
+    <main>
+        <article>Article</article>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+    </main>
+
+    <footer>Footer</footer>
+
+</body>
+</html>
