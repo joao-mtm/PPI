@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            padding: 10px;
+        }
+
+        .header {
+            background-color: #f1b300;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner {
+            background-color: #e53935;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: black;
+        }
+
+        .left-aside {
+            background-color: #1b5e20;
+            color: black;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-aside {
+            background-color: #f1b300;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-content {
+            background-color: #4285f4;
+            color: black;
+
+            min-height: 400px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .low-content {
+            background-color: #1b5e20;
+            height: 60px;
+            color: black;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer {
+            background-color: #4285f4;
+            height: 60px;
+            color: black;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .corpo-medio {
+            flex: 1;
+
+            display: flex;
+            gap: 8px;
+        }
+
+        .left-aside {
+            width: 15%;
+        }
+
+        .centro {
+            width: 70%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .right-aside {
+            width: 15%;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .container {
+                width: 100%;
+                min-height: 100vh;
+                padding: 8px;
+            }
+
+            .corpo-medio {
+                display: flex;
+                gap: 8px;
+                flex: 1;
+                min-height: 0;
+            }
+
+            .left-aside,
+            .centro,
+            .right-aside {
+                width: 100%;
+            }
+
+            .header {
+                height: 60px;
+            }
+
+            .left-aside {
+                height: 60px;
+                order: 1;
+            }
+
+            .centro {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                flex: 1;
+            }
+
+            .right-aside {
+                height: 60px;
+                order: 3;
+            }
+
+            .banner {
+                height: 60px;
+                order: 1;
+            }
+
+            .main-content {
+                min-height: 300px;
+                order: 2;
+            }
+
+            .low-content {
+                background-color: #1b5e20;
+                flex: 1;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            Header
+        </div>
+
+        <div class="corpo-medio">
+
+            <div class="left-aside">
+                Left Aside
+            </div>
+
+            <div class="centro">
+
+                <div class="banner">
+                    Banner
+                </div>
+
+                <div class="main-content">
+                    Main Content
+                </div>
+
+                <div class="low-content">
+                    Low Content
+                </div>
+
+            </div>
+
+            <div class="right-aside">
+                Right Aside
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Footer
+        </div>
+
+    </div>
+
+</body>
+</html>
