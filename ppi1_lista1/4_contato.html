@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Contato</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+    <p><a href="4_curriculo.html">Voltar para o Currículo</a></p>
+
+    <section class="formulario-contato">
+
+        <h1>Fale Conosco</h1>
+
+        <p>
+            Preencha as informações abaixo para enviar sua mensagem.
+            Os campos marcados como obrigatórios precisam ser preenchidos.
+        </p>
+
+        <form>
+
+            <div class="campo">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Informe seu nome" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Endereço de e-mail</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div class="campo">
+                <label for="assunto">Título da mensagem</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Sobre o que deseja falar?">
+            </div>
+
+            <div class="campo">
+                <label for="estado">Onde você mora?</label>
+
+                <select id="estado" name="estado">
+                    <option value="">Escolha seu estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="BA">Bahia</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="mensagem">Sua mensagem</label>
+            </div>
+
+            <textarea id="mensagem" name="mensagem" rows="6"
+                placeholder="Digite aqui o conteúdo da sua mensagem..."></textarea>
+
+            <div class="acoes">
+                <button type="submit">
+                    Enviar mensagem
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atividade 2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>HTTP</h1>
-    <p>O HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado na Web para a transferência de dados entre clientes e servidores. Ele define como as mensagens são formatadas e transmitidas, permitindo que os navegadores solicitem recursos e recebam respostas dos servidores.</p>
+    <p>O HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado na Web para a transferência de dados
+        entre clientes e servidores. Ele define como as mensagens são formatadas e transmitidas, permitindo que os
+        navegadores solicitem recursos e recebam respostas dos servidores.</p>
 
     <hr>
 
     <div>
         <h2>Como funciona o HTTP</h2>
 
-        <p>Quando um usuário acessa um site, o navegador envia uma requisição HTTP ao servidor, solicitando o recurso desejado (como uma página HTML, imagem ou vídeo). O servidor processa a requisição e envia uma resposta HTTP de volta ao navegador, contendo o recurso solicitado ou uma mensagem de erro.</p>
+        <p>Quando um usuário acessa um site, o navegador envia uma requisição HTTP ao servidor, solicitando o recurso
+            desejado (como uma página HTML, imagem ou vídeo). O servidor processa a requisição e envia uma resposta HTTP
+            de volta ao navegador, contendo o recurso solicitado ou uma mensagem de erro.</p>
 
         <img src="../images/http.jpg" alt="Diagrama HTTP" width="500">
 
-        <p>O HTTP é um protocolo sem estado, o que significa que cada requisição é independente e não mantém informações sobre requisições anteriores. Para gerenciar sessões e manter informações entre requisições, são utilizados cookies e outros mecanismos.</p>
+        <p>O HTTP é um protocolo sem estado, o que significa que cada requisição é independente e não mantém informações
+            sobre requisições anteriores. Para gerenciar sessões e manter informações entre requisições, são utilizados
+            cookies e outros mecanismos.</p>
     </div>
 
     <div>
@@ -32,9 +41,9 @@
             <li><strong>OPTIONS:</strong> solicita informações sobre os métodos suportados pelo servidor.</li>
         </ul>
     </div>
-    
+
     <hr>
-    
+
     <div>
         <h3>Detalhes de um campo de Request:</h3>
         <br>
@@ -42,10 +51,12 @@
         <img src="../images/request.jpg" alt="Detalhes de um campo de Request" width="500">
 
         <ul>
-            <li>:method: Mostra qual método HTTP foi utilizado na requisição. No exemplo da imagem retirada do Google Docs, o método utilizado é GET.</li>
+            <li>:method: Mostra qual método HTTP foi utilizado na requisição. No exemplo da imagem retirada do Google
+                Docs, o método utilizado é GET.</li>
             <li>:authority: Identifica o servidor ou domínio para o qual a requisição está sendo enviada.</li>
             <li>:path: Mostra o endereço ou caminho do recurso que está sendo solicitado ao servidor.</li>
-            <li>:scheme: Informa qual protocolo está sendo utilizado na comunicação. No exemplo, o protocolo é HTTP.</li>
+            <li>:scheme: Informa qual protocolo está sendo utilizado na comunicação. No exemplo, o protocolo é HTTP.
+            </li>
             <li>Accept: Especifica quais formatos de conteúdo o navegador está preparado para receber do servidor.</li>
             <li>Accept-Language: Informa quais idiomas são preferidos pelo navegador para receber o conteúdo.</li>
         </ul>
@@ -58,10 +69,14 @@
 
         <ul>
             <li>Alt-Svc: Indica que o servidor disponibiliza outros protocolos ou formas alternativas de conexão.</li>
-            <li>Cache-Control: Determina como e por quanto tempo o conteúdo pode ser armazenado no cache do navegador.</li>
-            <li>Content-Encoding: Informa qual método de compressão foi utilizado para reduzir o tamanho do conteúdo. Neste caso, foi utilizado gzip.</li>
-            <li>Content-Security-Policy: Estabelece regras de segurança que controlam quais recursos podem ser carregados e executados na página.</li>
+            <li>Cache-Control: Determina como e por quanto tempo o conteúdo pode ser armazenado no cache do navegador.
+            </li>
+            <li>Content-Encoding: Informa qual método de compressão foi utilizado para reduzir o tamanho do conteúdo.
+                Neste caso, foi utilizado gzip.</li>
+            <li>Content-Security-Policy: Estabelece regras de segurança que controlam quais recursos podem ser
+                carregados e executados na página.</li>
         </ul>
     </div>
 </body>
+
 </html>
