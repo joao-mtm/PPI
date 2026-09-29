@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4b</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .box {
+            display: inline-block;
+            width: 25%;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            float: left;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+        }
+
+        .box1 {
+            background-color: blueviolet;
+        }
+
+        .box2 {
+            background-color: green;
+        }
+
+        .box3 {
+            background-color: red;
+        }
+
+        .box4 {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+
+    <div class="explicacao">
+        <p>Nesse código, as quatro <code>&lt;div&lt;</code> ficam lado a lado, formando quatro caixas na mesma linha.
+            Isso acontece
+            principalmente porque cada <code>.box</code> possui <code>width: 25%</code>, ocupando um quarto da largura
+            da tela, e
+            <code>float: left</code>, que faz as caixas ficarem uma ao lado da outra.
+        </p>
+    </div>
+</body>
+
+</html>

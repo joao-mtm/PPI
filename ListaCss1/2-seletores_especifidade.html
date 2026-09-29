@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 2.2</title>
+
+    <style>
+        li {
+            color: red;
+        }
+        .fruta {
+            color: gray;
+        }
+        #uva {
+            color: blue;
+        }
+        #uva.fruta {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Especificidade no CSS</h1>
+
+    <p>
+        A especificidade define qual regra CSS será aplicada
+        quando existem várias regras para o mesmo elemento.
+    </p>
+
+    <h2>Exemplo:</h2>
+
+    <ul>
+
+        <li>Abacaxi</li>
+
+        <li class="fruta">Maçã</li>
+
+        <li id="uva" class="fruta">Uva</li>
+
+    </ul>
+
+    <h2>Explicação</h2>
+
+    <p>
+        A regra <strong>li</strong> deixa todos os itens vermelhos.
+    </p>
+
+    <p>
+        A regra <strong>.fruta</strong> é mais específica,
+        então a maçã fica cinza.
+    </p>
+
+    <p>
+        A regra <strong>#uva</strong> é mais específica que
+        .fruta, então a uva fica azul.
+    </p>
+
+    <p>
+        A regra <strong>#uva.fruta</strong> é ainda mais específica,
+        então a uva fica laranja.
+    </p>
+
+    <p><b>Observação:</b> Essa especificidade segue o mesmo molde para todos os elementos do exemplo aqui dei apenas um exemplo mas serve para todos</p>
+
+    <h2>Resultado</h2>
+
+    <ul>
+        <lh>Abacaxi → vermelho</lh>
+        <br>
+        <lh>Maçã → cinza</lh>
+        <br>
+        <lh>Uva → laranja</lh>
+    </ul>
+
+</body>
+
+</html>

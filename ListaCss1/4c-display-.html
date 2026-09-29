@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4c</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        .box {
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            padding: 5px;
+            box-sizing: border-box;
+            color: black;
+            font-weight: bold;
+        }
+
+        .box1 {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        .box2 {
+            background-color: yellow;
+            top: 0;
+            right: 0;
+        }
+
+        .box3 {
+            background-color: green;
+            bottom: 0;
+            right: 0;
+        }
+
+        .box4 {
+            background-color: blue;
+            bottom: 0;
+            left: 0;
+            color: white;
+        }
+
+        .box5 {
+            background-color: magenta;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .explicacao {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 80px);
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+
+    <div class="explicacao">
+        <p>O código utiliza <code>position: absolute</code> para posicionar cada caixa em locais específicos da página.
+            As caixas 1 e 2 ficam nos cantos superiores, enquanto as caixas 3 e 4 ficam nos cantos inferiores, usando
+            <code>top</code>, <code>bottom</code>, <code>left</code> e <code>right</code>.
+            A box5 fica centralizada na tela usando <code>top: 50%</code>, <code>left: 50%</code> e
+            <code>transform: translate(-50%, -50%)</code>.</p>
+    </div>
+</body>
+
+</html>
