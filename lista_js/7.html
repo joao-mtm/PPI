@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Palíndromos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>Verificador de Palíndromos</h1>
+
+    <label for="palavra">Palavra</label>
+    <input type="text" id="palavra" placeholder="Ex: arara">
+
+    <button id="btnVerificar">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function ehPalindromo(texto) {
+            let invertido = "";
+            for (let i = texto.length - 1; i >= 0; i--) {
+                invertido += texto[i];
+            }
+            return texto === invertido;
+        }
+
+        function verificar() {
+            const palavra = document.getElementById("palavra").value;
+
+            if (ehPalindromo(palavra)) {
+                document.getElementById("resultado").innerText = `${palavra} : é palíndromo`;
+            } else {
+                document.getElementById("resultado").innerText = `${palavra} : não é palíndromo`;
+            }
+        }
+
+        document.getElementById("btnVerificar").addEventListener("click", verificar);
+    </script>
+</body>
+</html>

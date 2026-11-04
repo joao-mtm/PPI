@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo de IMC</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>Cálculo de IMC</h1>
+
+    <label for="nome">Nome</label>
+    <input type="text" id="nome">
+
+    <label for="peso">Peso (kg)</label>
+    <input type="number" id="peso" step="0.1">
+
+    <label for="altura">Altura (m)</label>
+    <input type="number" id="altura" step="0.01">
+
+    <button id="btnCalcular">Calcular</button>
+
+    <p id="resultadoIMC"></p>
+    <p id="classificacao"></p>
+    <img id="imgPerfil" src="" alt="" width="150">
+
+    <script>
+        function calcularIMC() {
+            const nome = document.getElementById("nome").value.trim();
+            const peso = parseFloat(document.getElementById("peso").value);
+            const altura = parseFloat(document.getElementById("altura").value);
+
+            // 1. verificar se os tres campos foram preenchidos
+            if (nome === "" || isNaN(peso) || isNaN(altura)) {
+                document.getElementById("resultadoIMC").innerText = "Preencha nome, peso e altura.";
+                document.getElementById("classificacao").innerText = "";
+                document.getElementById("imgPerfil").src = "";
+                return;
+            }
+            if (peso <= 0 || altura <= 0) {
+                document.getElementById("resultadoIMC").innerText = "Peso e altura devem ser maiores que zero.";
+                document.getElementById("classificacao").innerText = "";
+                document.getElementById("imgPerfil").src = "";
+                return;
+            }
+
+            // 2. calcular o IMC
+            const imc = peso / (altura * altura);
+
+            // 3. classificar com if / else if
+            let classificacao;
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+            } else if (imc < 35) {
+                classificacao = "Obesidade grau 1";
+            } else if (imc < 40) {
+                classificacao = "Obesidade grau 2";
+            } else {
+                classificacao = "Obesidade grau 3 (mórbida)";
+            }
+
+            // 4. escolher a imagem com switch pela faixa arredondada
+            const faixa = Math.floor(imc);
+            let imagem;
+            switch (true) {
+                case imc < 18.5:
+                    imagem = "magro.png";
+                    break;
+                case faixa < 25:
+                    imagem = "normal.png";
+                    break;
+                case faixa < 30:
+                    imagem = "sobrepeso.png";
+                    break;
+                case faixa < 35:
+                    imagem = "obeso1.png";
+                    break;
+                case faixa < 40:
+                    imagem = "obeso2.png";
+                    break;
+                default:
+                    imagem = "obeso3.png";
+            }
+
+            document.getElementById("resultadoIMC").innerText = `${nome}, seu IMC é ${imc.toFixed(2)}`;
+            document.getElementById("classificacao").innerText = `Classificação: ${classificacao}`;
+            document.getElementById("imgPerfil").src = `imgs/${imagem}`;
+            document.getElementById("imgPerfil").alt = classificacao;
+        }
+
+        document.getElementById("btnCalcular").addEventListener("click", calcularIMC);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mudança de Cor de Fundo</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #4aa0dc;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 5px 12px;
+        }
+
+        #corAtual {
+            margin-top: 15px;
+            font-size: 18px;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnCor">Alterar Cor de Fundo</button>
+    <p id="corAtual" title="Clique para copiar">#4AA0DC</p>
+
+    <script>
+        function corAleatoria() {
+            const letras = "0123456789ABCDEF";
+            let cor = "#";
+            for (let i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+            }
+            return cor;
+        }
+
+        function mudarCor() {
+            const cor = corAleatoria();
+            document.body.style.backgroundColor = cor;
+            document.getElementById("corAtual").innerText = cor;
+        }
+
+        // bonus: copiar a cor ao clicar no texto
+        function copiarCor() {
+            const cor = document.getElementById("corAtual").innerText;
+            navigator.clipboard.writeText(cor);
+            alert("Cor copiada!");
+        }
+
+        document.getElementById("btnCor").addEventListener("click", mudarCor);
+        document.getElementById("corAtual").addEventListener("click", copiarCor);
+    </script>
+</body>
+</html>

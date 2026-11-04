@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Números Primos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>Números Primos em um Intervalo</h1>
+
+    <label for="inicio">Início</label>
+    <input type="number" id="inicio">
+
+    <label for="fim">Fim</label>
+    <input type="number" id="fim">
+
+    <button id="btnVerificar">Verificar</button>
+
+    <div id="resultadoPrimos"></div>
+
+    <script>
+        function ehPrimo(n) {
+            if (n < 2) {
+                return false;
+            }
+            for (let i = 2; i * i <= n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function verificar() {
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("fim").value);
+            const div = document.getElementById("resultadoPrimos");
+
+            // validar limites
+            if (isNaN(inicio) || isNaN(fim)) {
+                div.innerText = "Preencha o início e o fim.";
+                return;
+            }
+
+            // normalizar: inicio sempre menor ou igual ao fim
+            if (inicio > fim) {
+                const aux = inicio;
+                inicio = fim;
+                fim = aux;
+            }
+
+            const primos = [];
+            for (let n = inicio; n <= fim; n++) {
+                if (ehPrimo(n)) {
+                    primos.push(n);
+                }
+            }
+
+            if (primos.length === 0) {
+                div.innerText = `Não há números primos entre ${inicio} e ${fim}.`;
+            } else {
+                div.innerText = `Primos entre ${inicio} e ${fim} (${primos.length}): ${primos.join(", ")}`;
+            }
+        }
+
+        document.getElementById("btnVerificar").addEventListener("click", verificar);
+    </script>
+</body>
+</html>
