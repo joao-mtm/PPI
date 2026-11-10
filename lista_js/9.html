@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Cores</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .cor {
+            display: inline-block;
+            width: 140px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 8px;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Gerador de Paleta de Cores</h1>
+    <p>Aperte a tecla ESPAÇO para gerar novas cores!</p>
+
+    <div class="cor"></div>
+    <div class="cor"></div>
+    <div class="cor"></div>
+    <div class="cor"></div>
+    <div class="cor"></div>
+
+    <script>
+        function criarCor() {
+            let caracteres = "0123456789ABCDEF";
+            let resultado = "#";
+
+            for (let contador = 0; contador < 6; contador++) {
+                let numero = Math.floor(Math.random() * caracteres.length);
+                resultado += caracteres[numero];
+            }
+
+            return resultado;
+        }
+
+        function atualizarPaleta() {
+            let caixas = document.querySelectorAll(".cor");
+
+            caixas.forEach(function(caixa) {
+                let novaCor = criarCor();
+
+                caixa.style.backgroundColor = novaCor;
+                caixa.textContent = novaCor;
+            });
+        }
+
+        document.addEventListener("keydown", function(evento) {
+            if (evento.code === "Space") {
+                evento.preventDefault();
+                atualizarPaleta();
+            }
+        });
+
+        atualizarPaleta();
+    </script>
+
+</body>
+</html>

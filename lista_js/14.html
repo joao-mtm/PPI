@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de Teclas</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Teclas Pressionadas</h1>
+
+    <p>Pressione qualquer tecla para visualizar:</p>
+
+    <div id="resultado"></div>
+
+    <script>
+        let areaTexto = document.getElementById("resultado");
+
+        document.addEventListener("keydown", function(evento) {
+
+            areaTexto.textContent += evento.key + " ";
+
+            console.log("Tecla: " + evento.key);
+
+        });
+    </script>
+
+</body>
+</html>

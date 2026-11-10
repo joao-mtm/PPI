@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvar Nome</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bem-vindo!</h1>
+
+    <input type="text" id="campoNome" placeholder="Informe seu nome">
+
+    <button id="botaoSalvar">Guardar</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        let usuario = localStorage.getItem("usuario");
+
+        if (usuario !== null) {
+            document.getElementById("mensagem").textContent = "Olá, " + usuario + "!";
+        }
+
+        document.getElementById("botaoSalvar").addEventListener("click", function() {
+
+            let nomeDigitado = document.getElementById("campoNome").value;
+
+            localStorage.setItem("usuario", nomeDigitado);
+
+            document.getElementById("mensagem").textContent = "Olá, " + nomeDigitado + "!";
+        });
+    </script>
+
+</body>
+</html>

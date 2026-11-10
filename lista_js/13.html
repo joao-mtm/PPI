@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desenhando no Canvas</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        canvas {
+            border: 2px solid black;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Área de Desenho</h1>
+
+    <canvas id="tela" width="400" height="300"></canvas>
+
+    <script>
+        let tela = document.getElementById("tela");
+        let desenho = tela.getContext("2d");
+
+        // Desenhando um retângulo
+        desenho.fillStyle = "green";
+        desenho.fillRect(40, 40, 120, 60);
+
+        // Desenhando um círculo
+        desenho.fillStyle = "orange";
+        desenho.beginPath();
+        desenho.arc(250, 120, 40, 0, Math.PI * 2);
+        desenho.fill();
+
+        // Adicionando um texto
+        desenho.fillStyle = "black";
+        desenho.font = "22px Arial";
+        desenho.fillText("Meu Desenho", 120, 250);
+
+    </script>
+
+</body>
+</html>

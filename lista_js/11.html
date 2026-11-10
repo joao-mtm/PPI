@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Eventos</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+
+        button, input, select {
+            padding: 8px;
+            margin: 10px;
+        }
+
+        #area {
+            width: 200px;
+            padding: 30px;
+            margin: 20px auto;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Testando Eventos</h1>
+
+    <button id="meuBotao">Aperte aqui</button>
+
+    <br>
+
+    <input type="text" id="campoTexto" placeholder="Escreva alguma coisa">
+
+    <div id="area">Coloque o mouse aqui</div>
+
+    <select id="seletor">
+        <option value="">Selecione uma cor</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+        <option value="red">Vermelho</option>
+    </select>
+
+    <script>
+        let btn = document.getElementById("meuBotao");
+        let campo = document.getElementById("campoTexto");
+        let caixa = document.getElementById("area");
+        let cores = document.getElementById("seletor");
+
+        btn.addEventListener("click", function() {
+            alert("O botão foi pressionado!");
+        });
+
+        campo.addEventListener("keydown", function(evento) {
+            console.log("Tecla digitada: " + evento.key);
+        });
+
+        campo.addEventListener("focus", function() {
+            campo.style.backgroundColor = "lightyellow";
+        });
+
+        campo.addEventListener("blur", function() {
+            campo.style.backgroundColor = "white";
+        });
+
+        caixa.addEventListener("mouseover", function() {
+            caixa.style.backgroundColor = "lightblue";
+        });
+
+        caixa.addEventListener("mouseout", function() {
+            caixa.style.backgroundColor = "lightgray";
+        });
+
+        cores.addEventListener("change", function() {
+            document.body.style.backgroundColor = cores.value;
+        });
+    </script>
+
+</body>
+</html>

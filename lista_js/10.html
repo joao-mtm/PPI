@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Calculadora</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        button {
+            width: 55px;
+            height: 40px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        #visor {
+            width: 220px;
+            height: 30px;
+            text-align: right;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Minha Calculadora</h1>
+
+    <input type="text" id="visor" value="0" readonly>
+    <br><br>
+
+    <button onclick="definirOperacao('+')">+</button>
+    <button onclick="definirOperacao('-')">-</button>
+    <button onclick="definirOperacao('*')">×</button>
+    <button onclick="definirOperacao('/')">÷</button>
+
+    <br>
+
+    <button onclick="adicionarNumero('7')">7</button>
+    <button onclick="adicionarNumero('8')">8</button>
+    <button onclick="adicionarNumero('9')">9</button>
+
+    <br>
+
+    <button onclick="adicionarNumero('4')">4</button>
+    <button onclick="adicionarNumero('5')">5</button>
+    <button onclick="adicionarNumero('6')">6</button>
+
+    <br>
+
+    <button onclick="adicionarNumero('1')">1</button>
+    <button onclick="adicionarNumero('2')">2</button>
+    <button onclick="adicionarNumero('3')">3</button>
+
+    <br>
+
+    <button onclick="adicionarNumero('0')">0</button>
+    <button onclick="adicionarNumero('.')">.</button>
+    <button onclick="reiniciar()">AC</button>
+    <button onclick="mostrarResultado()">=</button>
+
+    <script>
+        let primeiroNumero = "";
+        let segundoNumero = "";
+        let sinal = "";
+
+        function adicionarNumero(valor) {
+            if (sinal === "") {
+                primeiroNumero += valor;
+                document.getElementById("visor").value = primeiroNumero;
+            } else {
+                segundoNumero += valor;
+                document.getElementById("visor").value = segundoNumero;
+            }
+        }
+
+        function definirOperacao(operacao) {
+            if (primeiroNumero !== "") {
+                sinal = operacao;
+            }
+        }
+
+        function mostrarResultado() {
+            let n1 = parseFloat(primeiroNumero);
+            let n2 = parseFloat(segundoNumero);
+            let total;
+
+            if (sinal === "+") {
+                total = n1 + n2;
+            } 
+            else if (sinal === "-") {
+                total = n1 - n2;
+            } 
+            else if (sinal === "*") {
+                total = n1 * n2;
+            } 
+            else if (sinal === "/") {
+                total = n1 / n2;
+            }
+
+            document.getElementById("visor").value = total;
+
+            primeiroNumero = String(total);
+            segundoNumero = "";
+            sinal = "";
+        }
+
+        function reiniciar() {
+            primeiroNumero = "";
+            segundoNumero = "";
+            sinal = "";
+
+            document.getElementById("visor").value = "0";
+        }
+    </script>
+
+</body>
+</html>
